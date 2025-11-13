@@ -1,0 +1,63 @@
+[tool.poetry]
+name = "ai-financial-news-tracker"
+version = "0.1.0"
+description = "AI Financial News Tracker - Track and analyze financial news with AI"
+authors = ["Ning Shen <ning.shen.project@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+keywords = ["finance", "news", "ai", "tracker"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+# Testing
+pytest = "^8.0.0"
+pytest-cov = "^6.0.0"
+pytest-asyncio = "^0.24.0"
+
+# Code quality
+black = "^24.0.0"
+ruff = "^0.8.0"
+mypy = "^1.13.0"
+
+# Development tools
+ipython = "^8.12.0"
+
+[tool.poetry.scripts]
+aifn = "aifn.main:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = []
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=aifn --cov-report=term-missing"
