@@ -5,6 +5,7 @@ description = "AI Financial News Tracker - Track and analyze financial news with
 authors = ["Ning Shen <ning.shen.project@gmail.com>"]
 readme = "README.md"
 license = "MIT"
+packages = [{include = "aifn"}]
 keywords = ["finance", "news", "ai", "tracker"]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -16,7 +17,20 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = ">=3.10,<3.15"
+requests = "^2.32.5"
+beautifulsoup4 = "^4.14.2"
+langchain = "^1.0.7"
+chromadb = "^0.4.22"
+gtts = "^2.5.4"
+pydub = "^0.25.1"
+python-dotenv = "^1.0.0"
+langgraph = "^1.0.3"
+langchain-openai = "^1.0.3"
+typing-extensions = "^4.15.0"
+langchain-google-genai = "^3.1.0"
+langchain-google-vertexai = "^3.1.1"
+langchain-community = "^0.4.1"
 
 [tool.poetry.group.dev.dependencies]
 # Testing
